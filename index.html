@@ -1,0 +1,123 @@
+<html>
+<head>
+	<title>Web Encoding Utility</title>
+
+<style type="text/css"><!--
+BODY {
+	margin-top:20px;
+	margin-bottom:20px;
+	}
+INPUT.submit,SPAN,BODY, TH, TD, UL, LI, P {
+	font-family:verdana;
+	font-size:10pt;
+	}
+A:hover {
+	color:#ce0000;
+	}
+.small {
+	font-size:8pt;
+	}
+IMG {
+	border-color:#000000;
+	}
+TEXTAREA,INPUT,PRE {
+	font-family:monospace;
+	}
+INPUT.submit {
+	cursor:hand;
+	background-color:#ffffff;
+	}
+
+//--></style>
+</head>
+<body>
+
+
+<script>
+<!--//
+
+function Foo() {
+	if (document && document.F1 && document.F1.input) {
+		document.F1.HO.value = html_encode(document.F1.input.value);
+		document.F1.UO.value = escape(document.F1.input.value);
+		return false;
+		}
+	}
+
+function html_encode(in_str) {
+	var str_obj = new String(in_str);
+	str_obj = str_obj.replace( /&/g, '&amp;' );
+	str_obj = str_obj.replace( /"/g, '&quot;' );
+	str_obj = str_obj.replace( />/g, '&gt;' );
+	str_obj = str_obj.replace( /</g, '&lt;' );
+	return str_obj.toString();
+	}
+
+//-->
+</script>
+
+<p><b>Web-Encoding Tool</b></p>
+
+<form method="POST" action="#" name="F1" onsubmit="return Foo();">
+
+
+<table border="0" cellpadding="4" cellspacing="1" bgcolor="#000000">
+<tr bgcolor="#9eb3c7">
+	<th>Input: Enter text here:</th>
+</tr>
+<tr bgcolor="#d5d2bb">
+	<td><textarea name="input" rows="5" cols="40"></textarea></td>
+</tr>
+<tr bgcolor="#d5d2bb">
+	<td align="center"><input type="submit" class="submit" value="Translate">
+
+<script>
+<!--//
+
+function ShowEx() {
+	if (document && document.F1 && document.F1.input) {
+		document.F1.input.value = "<B>Hello World!</B>";
+		Foo();
+		}
+	}
+
+document.write(' - <A HREF=javascript:ShowEx();>show example</A>');
+
+//-->
+</script></td>
+</tr>
+</table>
+
+<p><br></p>
+
+<table border="0" cellpadding="4" cellspacing="1" bgcolor="#000000">
+<tr bgcolor="#9eb3c7">
+	<th>Output: HTML-Encoded Text:</th>
+</tr>
+<tr bgcolor="#d5d2bb">
+	<td><textarea name="HO" rows="8" cols="40"></textarea></td>
+</tr>
+</table>
+
+<p><br></p>
+
+<table border="0" cellpadding="4" cellspacing="1" bgcolor="#000000">
+<tr bgcolor="#9eb3c7">
+	<th>Output: URL-Encoded Text:</th>
+</tr>
+<tr bgcolor="#d5d2bb">
+	<td><textarea name="UO" rows="8" cols="40"></textarea></td>
+</tr>
+</table>
+
+</td></tr></table>
+
+
+<p><br></p>
+
+<p align="right" style="font-size:8pt;color:#888888">&copy; By Satyendra</p>
+
+</div></center>
+
+</body>
+</html>
